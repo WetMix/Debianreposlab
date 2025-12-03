@@ -99,33 +99,33 @@ jobs:
 
         uses: actions/checkout@v3
 
-      - name: Set up SSH Agent
+      # - name: Set up SSH Agent
 
-        uses: webfactory/ssh-agent@v0.7.0
+      #  uses: webfactory/ssh-agent@v0.7.0
 
-        with:
+   #     with:
 
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+    #      ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Add host key to known_hosts
+     # - name: Add host key to known_hosts
 
-        run: ssh-keyscan 192.168.37.129 >> ~/.ssh/known_hosts
+      #  run: ssh-keyscan 192.168.37.129 >> ~/.ssh/known_hosts
 
-      - name: Deploy to server
+     # - name: Deploy to server
 
-        env:
+     #   env:
 
-          SSH_HOST: 192.168.37.129
+     #     SSH_HOST: 192.168.37.129
 
-          SSH_USER: devops_user
+     #     SSH_USER: devops_user
 
         run: |
 
-          ssh ${{ env.SSH_HOST }} "
-            cd ~/Debianreposlab/my_app &&
-            #docker stop my-app-image || true &&
-            docker rm my-app-image || true &&
-            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/my-app:latest &&
-            docker run -d -p 8081:80 --name my-app-image ${{ secrets.DOCKERHUB_USERNAME }}/my-app:latest
-          "
+      #    ssh ${{ env.SSH_HOST }} "
+          cd ~/Debianreposlab/my_app &&
+          docker stop my-app-image || true &&
+          docker rm my-app-image || true &&
+          docker pull ${{ secrets.DOCKERHUB_USERNAME }}/my-app:latest &&
+          docker run -d -p 8081:80 --name my-app-image ${{ secrets.DOCKERHUB_USERNAME }}/my-app:latest
+       #   "
 #123
