@@ -113,19 +113,19 @@ jobs:
 
       - name: Deploy to server
 
-     #   env:
+          #   env:
 
-     #     SSH_HOST: 192.168.37.129
+          #     SSH_HOST: 192.168.37.129
 
-     #     SSH_USER: devops_user
+          #     SSH_USER: devops_user
 
         run: |
 
-      #    ssh ${{ env.SSH_HOST }} "
+          #    ssh ${{ env.SSH_HOST }} "
           cd ~/Debianreposlab/my_app &&
           docker stop my-app-image || true &&
           docker rm my-app-image || true &&
           docker pull ${{ secrets.DOCKERHUB_USERNAME }}/my-app:latest &&
           docker run -d -p 8081:80 --name my-app-image ${{ secrets.DOCKERHUB_USERNAME }}/my-app:latest
-       #   "
+          #   "
 #123
