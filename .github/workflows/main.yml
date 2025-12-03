@@ -30,7 +30,7 @@ jobs:
 
         with:
 
-          python-version: '3.9'
+          python-version: '3.13.5'
 
       - name: Install dependencies and test
 
