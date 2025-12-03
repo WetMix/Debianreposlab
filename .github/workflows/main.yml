@@ -123,8 +123,8 @@ jobs:
 
           ssh ${{ env.SSH_HOST }} "
             cd ~/Debianreposlab/my_app &&
-            docker stop my-app-image || true &&
-            docker rm my-app-container || true &&
+            #docker stop my-app-image || true &&
+            docker rm my-app-image || true &&
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/my-app:latest &&
             docker run -d -p 8081:80 --name my-app-image ${{ secrets.DOCKERHUB_USERNAME }}/my-app:latest
           "
