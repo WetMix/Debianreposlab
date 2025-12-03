@@ -36,9 +36,13 @@ jobs:
 
         run: |
 
-          python3 -m pip install --upgrade pip
+          python3 -m  venv .venv
 
-          python3 -m pip install flake8 pytest
+          source .venv/bin/activate
+
+          pip install --upgrade pip
+
+          pip install flake8 pytest
 
           flake8 .
 
