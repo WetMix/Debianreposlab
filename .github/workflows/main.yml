@@ -1,5 +1,6 @@
 name: CI/CD Pipeline
 
+
 on:
 
   push:
@@ -17,21 +18,21 @@ jobs:
 
     runs-on: ubuntu-latest
 
-  steps:
+    steps:
 
-    - name: Checkout code
+      - name: Checkout code
 
-      uses: actions/checkout@v3
+        uses: actions/checkout@v3
 
-    - name: Set up Python 3.9
+      - name: Set up Python 3.9
 
-      uses: actions/setup-python@v3
+        uses: actions/setup-python@v3
 
-      with:
+        with:
 
-        python-version: '3.9'
+          python-version: '3.9'
 
-    - name: Install dependencies and test
+      - name: Install dependencies and test
 
     run: |
 
