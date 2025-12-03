@@ -75,7 +75,7 @@ jobs:
 
         with:
 
-          context: ~/Debianreposlab/my-app/Dockerfile
+          context: ~/Debianreposlab/my_app/Dockerfile
 
           push: true
 
